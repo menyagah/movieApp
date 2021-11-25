@@ -1,10 +1,12 @@
-const fetchData = async serchTerm => {
-    const response = await axios.get('http://www.omdbapi.com/', {
-        params: {
-            apiKey: '31337c71',
-            s:  serchTerm
+
+
+const fetchData = async searchTerm => {
+    const response = await axios.get(`https://torre.bio/api/bios/${searchTerm}`, {
+        headers: {
+            'Content-Type': 'application/json',
         }
-    })
+    });
+    
     console.log(response.data);
 }
 
